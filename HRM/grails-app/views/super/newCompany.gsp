@@ -148,12 +148,18 @@
                     <li><g:link controller="super" action="role"><g:message code="default.dropdown.attribute.roleList"/></g:link></li>
                 </ul>
             </li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#"><g:message code="menu.nav.menu"/><span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><g:link controller="super" action="menu"><g:message code="default.dropdown.attribute.menuList"/></g:link></li>
+                </ul>
+            </li>
         </ul><br>
     </div>
     <div class="box, col-md-12" style="border-radius:5px; background-color: #f7f6f6; padding-top: 15px; padding-bottom: 15px">
         <div class="inner" style="font-size:20px;height: auto">
             <g:form name="compForm" url="[controller:'super', action:'saveCompany']">
-                <fieldset><g:message code="box.inner.fieldset.userInformation"/></fieldset>
+                <fieldset><g:message code="box.inner.fieldset.adminInformation"/></fieldset>
                 <hr>
                 <div class="col-md-12" style="padding: 10px 0 10px 0" >
                     <div class="col-md-6" style="padding: 5px" >
@@ -161,7 +167,7 @@
                             <p style="padding-right:10px"><g:message code="default.attribute.firstName"/></p>
                         </div>
                         <div class="col-md-8">
-                            <input class="inputStyle" type="text" size="25" id="firstName" name="firstName" value="George">
+                            <input class="inputStyle" type="text" size="25" id="firstName" name="firstName" value="">
                         </div>
                     </div>
                     <div class="col-md-6" style="padding: 5px">
@@ -177,7 +183,7 @@
                             <p style="padding-right:10px"><g:message code="default.attribute.lastName"/></p>
                         </div>
                         <div class="col-md-8">
-                            <input class="inputStyle" type="text" size="25" id="lastName" name="lastName" value="Pandore">
+                            <input class="inputStyle" type="text" size="25" id="lastName" name="lastName" value="">
                         </div>
                     </div>
                     <div class="col-md-6" style="padding: 5px">
@@ -193,7 +199,7 @@
                             <p style="padding-right:10px"><g:message code="default.attribute.email0"/></p>
                         </div>
                         <div class="col-md-8">
-                            <input class="inputStyle" type="email" size="25" id="employeeEmail" name="employeeEmail" size="25" value="george@gmail.com">
+                            <input class="inputStyle" type="email" size="25" id="employeeEmail" name="employeeEmail" size="25" value="">
                         </div>
                     </div>
                     <div class="col-md-6" style="padding: 5px">
@@ -201,7 +207,7 @@
                             <p style="padding-right:10px"><g:message code="default.attribute.phone"/></p>
                         </div>
                         <div class="col-md-8">
-                            <input class="inputStyle" type="text" size="25" id="employeePhone"  name="employeePhone" value="675645XXXX">
+                            <input class="inputStyle" type="text" size="25" id="employeePhone"  name="employeePhone" value="">
                         </div>
                     </div>
                     <div class="col-md-6" style="padding: 5px">
@@ -209,7 +215,7 @@
                             <p style="padding-right:10px"><g:message code="default.attribute.age"/></p>
                         </div>
                         <div class="col-md-8">
-                            <input class="inputStyle" type="number" min="18" max="50" id="age" name="age" value="22">
+                            <input class="inputStyle" type="number" min="18" max="50" id="age" name="age" value="">
                         </div>
                     </div>
                     <div class="col-md-6" style="padding: 5px">
@@ -217,7 +223,7 @@
                             <p style="padding-right:10px"><g:message code="default.attribute.location"/></p>
                         </div>
                         <div class="col-md-8">
-                            <input class="inputStyle" type="text" size="25" id="location" name="location" value="California">
+                            <input class="inputStyle" type="text" size="25" id="location" name="location" value="">
                         </div>
                     </div>
                     <div class="col-md-6" style="padding: 5px">
@@ -233,7 +239,7 @@
                             <p style="padding-right:10px"><g:message code="default.attribute.password"/></p>
                         </div>
                         <div class="col-md-8">
-                            <input class="inputStyle" type="password" size="25" id="password" name="password" value="1234">
+                            <input class="inputStyle" type="password" size="25" id="password" name="password" value="">
                         </div>
                     </div>
                 </div>
@@ -256,7 +262,7 @@
                             <p style="padding-right:10px"><g:message code="default.attribute.taxId0"/></p>
                         </div>
                         <div class="col-md-8">
-                            <input class="inputStyle" type="text" size="25" id="taxId" name="taxId" value="0123">
+                            <input class="inputStyle" type="text" size="25" id="taxId" name="taxId" value="">
                         </div>
                     </div>
                     <div class="col-md-6" style="padding: 5px">
@@ -264,7 +270,7 @@
                             <p style="padding-right:10px"><g:message code="default.attribute.companyStatus"/></p>
                         </div>
                         <div class="col-md-8">
-                            <input class="inputStyle" type="text" size="25" id="companyStatus" name="companyStatus" value="active">
+                            <input class="inputStyle" type="text" size="25" id="companyStatus" name="companyStatus" value="">
                         </div>
                     </div>
                     <div class="col-md-6" style="padding: 5px">
@@ -272,7 +278,7 @@
                             <p style="padding-right:10px"><g:message code="default.attribute.registrationNo0"/></p>
                         </div>
                         <div class="col-md-8">
-                            <input class="inputStyle" type="text" size="25" id="registrationNo" name="registrationNo" value="00123">
+                            <input class="inputStyle" type="text" size="25" id="registrationNo" name="registrationNo" value="">
                         </div>
                     </div>
                     <div class="col-md-6" style="padding: 5px">
@@ -280,7 +286,7 @@
                             <p style="padding-right:10px"><g:message code="default.attribute.email0"/></p>
                         </div>
                         <div class="col-md-8">
-                            <input class="inputStyle" type="email" size="25" id="companyEmail" name="companyEmail" value="excite@gmail.com">
+                            <input class="inputStyle" type="email" size="25" id="companyEmail" name="companyEmail" value="">
                         </div>
                     </div>
                     <div class="col-md-6" style="padding: 5px">
@@ -288,7 +294,7 @@
                             <p style="padding-right:10px"><g:message code="default.attribute.phone0"/></p>
                         </div>
                         <div class="col-md-8">
-                            <input class="inputStyle" type="text" size="25" id="companyPhone" name="companyPhone" value="9999987685">
+                            <input class="inputStyle" type="text" size="25" id="companyPhone" name="companyPhone" value="">
                         </div>
                     </div>
                     <div class="col-md-6" style="padding: 5px">
@@ -296,7 +302,7 @@
                             <p style="padding-right:10px"><g:message code="default.attribute.address0"/></p>
                         </div>
                         <div class="col-md-8">
-                            <input class="inputStyle" type="text" size="25" id="address" name="address" value="Flipkart">
+                            <input class="inputStyle" type="text" size="25" id="address" name="address" value="">
                         </div>
                     </div>
                     <div class="col-md-6" style="padding: 5px">
@@ -304,7 +310,7 @@
                             <p style="padding-right:10px"><g:message code="default.attribute.city0"/></p>
                         </div>
                         <div class="col-md-8">
-                            <input class="inputStyle" type="text" size="25" id="city" name="city" value="California">
+                            <input class="inputStyle" type="text" size="25" id="city" name="city" value="">
                         </div>
                     </div>
                     <div class="col-md-6" style="padding: 5px">
@@ -312,7 +318,7 @@
                             <p style="padding-right:10px"><g:message code="default.attribute.state0"/></p>
                         </div>
                         <div class="col-md-8">
-                            <input class="inputStyle" type="text" size="25" id="state" name="state" value="California">
+                            <input class="inputStyle" type="text" size="25" id="state" name="state" value="">
                         </div>
                     </div>
                     <div class="col-md-6" style="padding: 5px">
@@ -320,7 +326,7 @@
                             <p style="padding-right:10px"><g:message code="default.attribute.country0"/></p>
                         </div>
                         <div class="col-md-8">
-                            <input class="inputStyle" type="text" size="25" id="country" name="country" value="U.S">
+                            <input class="inputStyle" type="text" size="25" id="country" name="country" value="">
                         </div>
                     </div>
                     <div class="col-md-6" style="padding: 5px">

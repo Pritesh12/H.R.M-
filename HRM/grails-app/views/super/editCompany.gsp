@@ -143,7 +143,12 @@
                     <li><g:link controller="super" action="role">Role List</g:link></li>
                 </ul>
             </li>
-            <li><g:link class="home" controller="geozone" action="form" params="[companyId:company.id]">Create GeoZone</g:link></li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#"><g:message code="menu.nav.menu"/><span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><g:link controller="super" action="menu"><g:message code="default.dropdown.attribute.menuList"/></g:link></li>
+                </ul>
+            </li>
         </ul><br>
     </div>
     <div class="box, col-md-12" style="border-radius:5px; background-color: #f7f6f6; padding-top: 15px; padding-bottom: 15px">

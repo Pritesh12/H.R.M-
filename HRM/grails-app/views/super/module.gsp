@@ -52,6 +52,13 @@
                     <li><g:link controller="super" action="role"><g:message code="default.dropdown.attribute.roleList"/></g:link></li>
                 </ul>
             </li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#"><g:message code="menu.nav.menu"/><span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><g:link controller="super" action="menu"><g:message code="default.dropdown.attribute.menuList"/></g:link></li>
+                </ul>
+            </li>
+
         </ul><br>
     </div>
     <g:form name="showModuleForm" controller="super" action="modifyModule">

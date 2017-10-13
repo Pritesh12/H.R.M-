@@ -53,6 +53,12 @@
                 <li><g:link controller="super" action="role"><g:message code="default.dropdown.attribute.roleList"/></g:link></li>
             </ul>
         </li>
+        <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#"><g:message code="menu.nav.menu"/><span class="caret"></span></a>
+            <ul class="dropdown-menu">
+                <li><g:link controller="super" action="menu"><g:message code="default.dropdown.attribute.menuList"/></g:link></li>
+            </ul>
+        </li>
     </ul><br>
 </div>
 <div class="col-sm-12" style="padding: 0 0 0 0; background-color: #f28c38">
