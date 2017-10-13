@@ -12,7 +12,7 @@
     <link rel="stylesheet" type="text/css" href="Stylesheet.css">
 
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-    <title>HRM | Sign Up</title>
+    <title><g:message code="menu.nav.hrm"/> | Sign Up</title>
     <g:javascript>
     var userCheck=true;
     var compCheck=true;
@@ -110,31 +110,31 @@
 <div class="col-md-12">
     <div class="col-md-12" style="background-color: white; padding:4px; padding-left: 0px; padding-right: 0px">
         <div class="col-md-10">
-            <h2 style="text-align:left;color:darkorange;font-family: Verdana" >Human Resource Management </h2>
+            <h2 style="text-align:left;color:darkorange;font-family: Verdana" ><g:message code="default.attribute.header.banner"/></h2>
         </div>
     </div>
 
     <div class="col-md-12" style="background-color: #f28c38; color: white ">
-        <h1 style="text-align:left;font-size:20px;font-family:Verdana ">Sign Up</h1>
+        <h1 style="text-align:left;font-size:20px;font-family:Verdana "><g:message code="box.inner.fieldset.signUp"/></h1>
     </div>
 
     <div class="box, col-md-12" style="border-radius:5px; background-color: #f7f6f6; padding-top: 15px; padding-bottom: 15px">
         <div class="inner" style="font-size:20px;height: auto">
             <g:form name="signUpForm" url="[controller:'signUp', action:'saveSignup']">
-                <fieldset>User Information</fieldset>
+                <fieldset><g:message code="box.inner.fieldset.userInformation"/></fieldset>
                 <hr>
                 <div class="col-md-12" style="padding: 10px 0 10px 0" >
                     <div class="col-md-6" style="padding: 5px" >
                         <div class="col-md-4" style="font-family:verdana;font-size:12px" >
-                            <p style="padding-right:10px">First Name* </p>
+                            <p style="padding-right:10px"><g:message code="default.attribute.firstName"/></p>
                         </div>
                         <div class="col-md-8">
-                            <input class="inputStyle" type="text" size="25" id="firstName" name="firstName" value="Abhishek">
+                            <input class="inputStyle" type="text" size="25" id="firstName" name="firstName" value="Example">
                         </div>
                     </div>
                     <div class="col-md-6" style="padding: 5px">
                         <div class="col-md-4" style="font-family:verdana;font-size:12px;" >
-                            <p style="padding-right:10px">Middle Name</p>
+                            <p style="padding-right:10px"><g:message code="default.attribute.middleName"/></p>
                         </div>
                         <div class="col-md-8">
                             <input class="inputStyle" type="text" size="25" id="middleName" name="middleName" value="">
@@ -142,15 +142,15 @@
                     </div>
                     <div class="col-md-6" style="padding: 5px">
                         <div class="col-md-4" style="font-family:verdana;font-size:12px;" >
-                            <p style="padding-right:10px">Last Name* </p>
+                            <p style="padding-right:10px"><g:message code="default.attribute.lastName"/></p>
                         </div>
                         <div class="col-md-8">
-                            <input class="inputStyle" type="text" size="25" id="lastName" name="lastName" value="Gharai">
+                            <input class="inputStyle" type="text" size="25" id="lastName" name="lastName" value="">
                         </div>
                     </div>
                     <div class="col-md-6" style="padding: 5px">
                         <div class="col-md-4" style="font-family:verdana;font-size:12px;" >
-                            <p style="padding-right:10px">DOB* </p>
+                            <p style="padding-right:10px"><g:message code="default.attribute.dob"/></p>
                         </div>
                         <div class="col-md-8">
                             <input class="inputStyle" type="date" id="dob" name="dob" >
@@ -158,39 +158,39 @@
                     </div>
                     <div class="col-md-6" style="padding: 5px">
                         <div class="col-md-4" style="font-family:verdana;font-size:12px;" >
-                            <p style="padding-right:10px">Email* </p>
+                            <p style="padding-right:10px"><g:message code="default.attribute.email"/></p>
                         </div>
                         <div class="col-md-8">
-                            <input class="inputStyle" type="email" size="25" id="employeeEmail" name="employeeEmail" size="25" value="abhishek.gharai95@gmail.com">
+                            <input class="inputStyle" type="email" size="25" id="employeeEmail" name="employeeEmail" size="25" value="example.17@gmail.com">
                         </div>
                     </div>
                     <div class="col-md-6" style="padding: 5px">
                         <div class="col-md-4" style="font-family:verdana;font-size:12px;" >
-                            <p style="padding-right:10px">Phone </p>
+                            <p style="padding-right:10px"><g:message code="default.attribute.phone"/></p>
                         </div>
                         <div class="col-md-8">
-                            <input class="inputStyle" type="text" size="25" id="employeePhone"  name="employeePhone" value="9148939424">
+                            <input class="inputStyle" type="text" size="25" id="employeePhone"  name="employeePhone" value="865778XXXX">
                         </div>
                     </div>
                     <div class="col-md-6" style="padding: 5px">
                         <div class="col-md-4" style="font-family:verdana;font-size:12px;" >
-                            <p style="padding-right:10px">Age </p>
+                            <p style="padding-right:10px"><g:message code="default.attribute.age"/></p>
                         </div>
                         <div class="col-md-8">
-                            <input class="inputStyle" type="number" min="18" max="50" id="age" name="age" value="22">
+                            <input class="inputStyle" type="number" min="18" max="50" id="age" name="age" value="30">
                         </div>
                     </div>
                     <div class="col-md-6" style="padding: 5px">
                         <div class="col-md-4" style="font-family:verdana;font-size:12px;" >
-                            <p style="padding-right:10px">Location </p>
+                            <p style="padding-right:10px"><g:message code="default.attribute.location"/></p>
                         </div>
                         <div class="col-md-8">
-                            <input class="inputStyle" type="text" size="25" id="location" name="location" value="Brookefield">
+                            <input class="inputStyle" type="text" size="25" id="location" name="location" value="Jamaica">
                         </div>
                     </div>
                     <div class="col-md-6" style="padding: 5px">
                         <div class="col-md-4" style="font-family:verdana;font-size:12px;" >
-                            <p style="padding-right:10px">Username* </p>
+                            <p style="padding-right:10px"><g:message code="default.attribute.username"/></p>
                         </div>
                         <div class="col-md-8">
                             <input class="inputStyle" type="text" size="25" id="username" name="username" value="">
@@ -198,7 +198,7 @@
                     </div>
                     <div class="col-md-6" style="padding: 5px">
                         <div class="col-md-4" style="font-family:verdana;font-size:12px;" >
-                            <p style="padding-right:10px">Password* </p>
+                            <p style="padding-right:10px"><g:message code="default.attribute.password"/></p>
                         </div>
                         <div class="col-md-8">
                             <input class="inputStyle" type="password" size="25" id="password" name="password" value="1234">
@@ -208,12 +208,12 @@
                 <div class="col-md-12" style="padding: 0 0 0 0" >
                     <hr style="margin: 10px 0 0 0;padding-bottom: 10px">
                 </div>
-                <fieldset style="padding:0 10px 0 0">Company Information</fieldset>
+                <fieldset style="padding:0 10px 0 0"><g:message code="box.inner.fieldset.companyInfo"/></fieldset>
                 <hr>
                 <div class="col-md-12" style="padding: 10px 0 10px 0" >
                     <div class="col-md-6" style="padding: 5px" >
                         <div class="col-md-4" style="font-family:verdana;font-size:12px" >
-                            <p style="padding-right:10px">Company Name* </p>
+                            <p style="padding-right:10px"><g:message code="default.attribute.companyName0"/></p>
                         </div>
                         <div class="col-md-8">
                             <input class="inputStyle" type="text" size="25" id="companyName" name="companyName" value="" onchange="companyNameCheck()">
@@ -221,7 +221,7 @@
                     </div>
                     <div class="col-md-6" style="padding: 5px">
                         <div class="col-md-4" style="font-family:verdana;font-size:12px;" >
-                            <p style="padding-right:10px">Tax Id*</p>
+                            <p style="padding-right:10px"><g:message code="default.attribute.taxId0"/></p>
                         </div>
                         <div class="col-md-8">
                             <input class="inputStyle" type="text" size="25" id="taxId" name="taxId" value="0123">
@@ -229,71 +229,71 @@
                     </div>
                     <div class="col-md-6" style="padding: 5px">
                         <div class="col-md-4" style="font-family:verdana;font-size:12px;" >
-                            <p style="padding-right:10px">Company Status </p>
+                            <p style="padding-right:10px"><g:message code="default.attribute.companyStatus"/></p>
                         </div>
                         <div class="col-md-8">
-                            <input class="inputStyle" type="text" size="25" id="companyStatus" name="companyStatus" value="active">
+                            <input class="inputStyle" type="text" size="25" id="companyStatus" name="companyStatus" value="Active">
                         </div>
                     </div>
                     <div class="col-md-6" style="padding: 5px">
                         <div class="col-md-4" style="font-family:verdana;font-size:12px;" >
-                            <p style="padding-right:10px">Registration No.* </p>
+                            <p style="padding-right:10px"><g:message code="default.attribute.registrationNo0"/></p>
                         </div>
                         <div class="col-md-8">
-                            <input class="inputStyle" type="text" size="25" id="registrationNo" name="registrationNo" value="00123">
+                            <input class="inputStyle" type="text" size="25" id="registrationNo" name="registrationNo" value="156473">
                         </div>
                     </div>
                     <div class="col-md-6" style="padding: 5px">
                         <div class="col-md-4" style="font-family:verdana;font-size:12px;" >
-                            <p style="padding-right:10px">Email* </p>
+                            <p style="padding-right:10px"><g:message code="default.attribute.email0"/></p>
                         </div>
                         <div class="col-md-8">
-                            <input class="inputStyle" type="email" size="25" id="companyEmail" name="companyEmail" value="excite@gmail.com">
+                            <input class="inputStyle" type="email" size="25" id="companyEmail" name="companyEmail" value="jamaica@gmail.com">
                         </div>
                     </div>
                     <div class="col-md-6" style="padding: 5px">
                         <div class="col-md-4" style="font-family:verdana;font-size:12px;" >
-                            <p style="padding-right:10px">Phone* </p>
+                            <p style="padding-right:10px"><g:message code="default.attribute.phone0"/></p>
                         </div>
                         <div class="col-md-8">
-                            <input class="inputStyle" type="text" size="25" id="companyPhone" name="companyPhone" value="9876543210">
+                            <input class="inputStyle" type="text" size="25" id="companyPhone" name="companyPhone" value="564637XXXX">
                         </div>
                     </div>
                     <div class="col-md-6" style="padding: 5px">
                         <div class="col-md-4" style="font-family:verdana;font-size:12px;" >
-                            <p style="padding-right:10px">Address* </p>
+                            <p style="padding-right:10px"><g:message code="default.attribute.address0"/></p>
                         </div>
                         <div class="col-md-8">
-                            <input class="inputStyle" type="text" size="25" id="address" name="address" value="ITPL">
+                            <input class="inputStyle" type="text" size="25" id="address" name="address" value="Greater Antilles">
                         </div>
                     </div>
                     <div class="col-md-6" style="padding: 5px">
                         <div class="col-md-4" style="font-family:verdana;font-size:12px;" >
-                            <p style="padding-right:10px">City* </p>
+                            <p style="padding-right:10px"><g:message code="default.attribute.city0"/></p>
                         </div>
                         <div class="col-md-8">
-                            <input class="inputStyle" type="text" size="25" id="city" name="city" value="Bangalore">
+                            <input class="inputStyle" type="text" size="25" id="city" name="city" value="">
                         </div>
                     </div>
                     <div class="col-md-6" style="padding: 5px">
                         <div class="col-md-4" style="font-family:verdana;font-size:12px;" >
-                            <p style="padding-right:10px">State* </p>
+                            <p style="padding-right:10px"><g:message code="default.attribute.state0"/></p>
                         </div>
                         <div class="col-md-8">
-                            <input class="inputStyle" type="text" size="25" id="state" name="state" value="Karnataka">
+                            <input class="inputStyle" type="text" size="25" id="state" name="state" value="">
                         </div>
                     </div>
                     <div class="col-md-6" style="padding: 5px">
                         <div class="col-md-4" style="font-family:verdana;font-size:12px;" >
-                            <p style="padding-right:10px">Country* </p>
+                            <p style="padding-right:10px"><g:message code="default.attribute.country0"/></p>
                         </div>
                         <div class="col-md-8">
-                            <input class="inputStyle" type="text" size="25" id="country" name="country" value="India">
+                            <input class="inputStyle" type="text" size="25" id="country" name="country" value="">
                         </div>
                     </div>
                     <div class="col-md-6" style="padding: 5px">
                         <div class="col-md-4" style="font-family:verdana;font-size:12px;" >
-                            <p style="padding-right:10px">Leave Rate* </p>
+                            <p style="padding-right:10px"><g:message code="default.attribute.leaveRate"/></p>
                         </div>
                         <div class="col-md-8">
                             <input class="inputStyle" type="number" min="0" max="30" id="leaveRate" name="leaveRate" value="">
@@ -301,7 +301,7 @@
                     </div>
                     <div class="col-md-6" style="padding: 5px">
                         <div class="col-md-4" style="font-family:verdana;font-size:12px;" >
-                            <p style="padding-right:10px">Maximum Leave* </p>
+                            <p style="padding-right:10px"><g:message code="default.attribute.maxLeave"/></p>
                         </div>
                         <div class="col-md-8">
                             <input class="inputStyle" type="number" min="0" max="31" id="maxLeave" name="maxLeave" value="">
@@ -312,14 +312,14 @@
                 <div class="col-md-12" style="padding: 0 0 0 0" >
                     <hr style="margin: 10px 0 0 0;padding-bottom: 10px">
                 </div>
-                <fieldset style="padding:0 10px 0 0">Select Module</fieldset><hr>
+                <fieldset style="padding:0 10px 0 0"><g:message code="default.attribute.selectModule"/></fieldset><hr>
                 <div class="col-md-12" style="padding: 0 0 10px 0" align="center">
 
                     <div class="col-md-12">
                         <div class="col-md-5" style="padding: 0 0 0 0">
                             <div class="col-md-6"></div>
                             <div class="col-md-6" style="border-radius: 10px; background-color: #f2f2f2">
-                                <h4>Available Modules</h4><hr style="margin-bottom: 2px; margin-top: 2px;">
+                                <h4><g:message code="default.attribute.availableModules"/></h4><hr style="margin-bottom: 2px; margin-top: 2px;">
                                 <table border="0" style="width:100%;margin: 5px">
                                     <g:if test="${modules!=null}">
                                         <g:each in="${modules}" var="module" status="i">
@@ -346,7 +346,7 @@
                         </div>
                         <div class="col-md-5" align="center" style="padding: 0 0 0 0">
                             <div class="col-md-6" style="border-radius: 10px; background-color: #f2f2f2">
-                                <h4>Selected Modules</h4><hr style="margin-bottom: 2px; margin-top: 2px;">
+                                <h4><g:message code="default.attribute.selectedModules"/></h4><hr style="margin-bottom: 2px; margin-top: 2px;">
                                 <table border="0" style="width:100%;margin: 5px" id="tab">
                                     <g:if test="${modules!=null}">
                                         <g:each in="${modules}" var="module" status="i">

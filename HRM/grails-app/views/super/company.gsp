@@ -8,60 +8,60 @@
     <link rel="stylesheet" type="text/css" href="Stylesheet.css">
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 
-    <title>HRM | Company Data</title>
+    <title><g:message code="menu.nav.hrm"/> | <g:message code="box.inner.fieldset.companyInfo"/></title>
 </head>
 <body>
 <div class="col-md-12">
 <div class="col-md-12" style="background-color: white; padding:4px; padding-left: 0px; padding-right: 0px">
     <div class="col-md-10">
-        <h2 style="text-align:left;color:darkorange;font-family: Verdana" >Human Resource Management </h2>
+        <h2 style="text-align:left;color:darkorange;font-family: Verdana" ><g:message code="default.attribute.header.banner"/></h2>
     </div>
     <div class="col-md-2" style="padding:20px;padding-bottom: 0px; height:100%; color: #666666" >
-        Welcome ${username}<button class="btn btn-primary dropdown-toggle" style="border: 0px;color: black; background-color: white; padding-bottom: 3px; padding-top: 3px; padding-left: 6px;padding-right: 6px" type="button" data-toggle="dropdown">
+        <g:message code="default.attribute.welcome"/> ${username}<button class="btn btn-primary dropdown-toggle" style="border: 0px;color: black; background-color: white; padding-bottom: 3px; padding-top: 3px; padding-left: 6px;padding-right: 6px" type="button" data-toggle="dropdown">
         <span class="caret"></span></button>
         <ul class="dropdown-menu">
-            <li><g:link controller="#" action="newCompPage" style="text-decoration: none">Profile</g:link></li>
-            <li><g:link controller="#" action="newCompPage" style="text-decoration: none">Setting</g:link></li>
-            <li><g:link controller="logout" style="text-decoration: none">Log Out</g:link></li>
+            <li><g:link controller="#" action="newCompPage" style="text-decoration: none"><g:message code="default.attribute.profile"/></g:link></li>
+            <li><g:link controller="#" action="newCompPage" style="text-decoration: none"><g:message code="default.attribute.setting"/></g:link></li>
+            <li><g:link controller="logout" style="text-decoration: none"><g:message code="default.attribute.logout"/></g:link></li>
         </ul>
 
     </div>
 </div>
 
-<div class="col-md-12" style="background-color: #f28c38; color: white "><h1 style="text-align:left;font-size:20px;font-family:Verdana ">Company Information</h1></div>
+<div class="col-md-12" style="background-color: #f28c38; color: white "><h1 style="text-align:left;font-size:20px;font-family:Verdana "><g:message code="box.inner.fieldset.companyInfo"/></h1></div>
 <div>
     <ul class="nav nav-tabs">
-        <li><g:link class="home" controller="secure" action="superAdmin">Home</g:link></li>
+        <li><g:link class="home" controller="secure" action="superAdmin"><g:message code="menu.nav.home"/></g:link></li>
         <li class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Company<span class="caret"></span></a>
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#"><g:message code="menu.nav.company"/><span class="caret"></span></a>
             <ul class="dropdown-menu">
-                <li><g:link controller="super" action="newCompany">Add Company</g:link></li>
-                <li><g:link class="list" controller="super" action="company">Company List</g:link></li>
+                <li><g:link controller="super" action="newCompany"><g:message code="default.dropdown.attribute.addCompany"/></g:link></li>
+                <li><g:link class="list" controller="super" action="company"><g:message code="default.dropdown.attribute.companyList"/></g:link></li>
             </ul>
         </li>
         <li class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Module<span class="caret"></span></a>
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#"><g:message code="menu.nav.module"/><span class="caret"></span></a>
             <ul class="dropdown-menu">
-                <li><g:link controller="super" action="newModule">Add Module</g:link></li>
-                <li><g:link controller="super" action="module">Module List</g:link></li>
+                <li><g:link controller="super" action="newModule"><g:message code="default.dropdown.attribute.addModule"/></g:link></li>
+                <li><g:link controller="super" action="module"><g:message code="default.dropdown.attribute.moduleList"/></g:link></li>
             </ul>
         </li>
         <li class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Role<span class="caret"></span></a>
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#"><g:message code="menu.nav.role"/><span class="caret"></span></a>
             <ul class="dropdown-menu">
-                <li><g:link controller="super" action="newRole">Add Role</g:link></li>
-                <li><g:link controller="super" action="role">Role List</g:link></li>
+                <li><g:link controller="super" action="newRole"><g:message code="default.dropdown.attribute.addRole"/></g:link></li>
+                <li><g:link controller="super" action="role"><g:message code="default.dropdown.attribute.roleList"/></g:link></li>
             </ul>
         </li>
     </ul><br>
 </div>
 <div class="col-sm-12" style="padding: 0 0 0 0; background-color: #f28c38">
-    <div class="col-sm-2" style="border:1px solid white; padding: 10px"><a href="/secure/superAdmin?sort=companyName&max=4&order=asc" style="color: #f2f2f2; text-decoration: none">Company Name</a></div>
-    <div class="col-sm-2" style="border:1px solid white; padding: 10px"><a href="/secure/superAdmin?sort=taxId&max=4&order=asc" style="color: #f2f2f2; text-decoration: none">Tax Id</a></div>
-    <div class="col-sm-2" style="border:1px solid white; padding: 10px"><a href="/secure/superAdmin?sort=companyStatus&max=4&order=asc" style="color: #f2f2f2; text-decoration: none">Company Status</a></div>
-    <div class="col-sm-2" style="border:1px solid white; padding: 10px"><a href="/secure/superAdmin?sort=registrationNo&max=4&order=asc" style="color: #f2f2f2; text-decoration: none">Registration No</a></div>
-    <div class="col-sm-2" style="border:1px solid white; padding: 10px"><a href="/secure/superAdmin?sort=totalEmployee&max=4&order=asc" style="color: #f2f2f2; text-decoration: none">Total Employee</a></div>
-    <div class="col-sm-2" style="border:1px solid white; padding: 10px"><a href="/secure/superAdmin?sort=email&max=4&order=asc" style="color: #f2f2f2; text-decoration: none">Email</a></div>
+    <div class="col-sm-2" style="border:1px solid white; padding: 10px"><a href="/secure/superAdmin?sort=companyName&max=4&order=asc" style="color: #f2f2f2; text-decoration: none"><g:message code="default.attribute.companyName"/></a></div>
+    <div class="col-sm-2" style="border:1px solid white; padding: 10px"><a href="/secure/superAdmin?sort=taxId&max=4&order=asc" style="color: #f2f2f2; text-decoration: none"><g:message code="default.attribute.taxId"/></a></div>
+    <div class="col-sm-2" style="border:1px solid white; padding: 10px"><a href="/secure/superAdmin?sort=companyStatus&max=4&order=asc" style="color: #f2f2f2; text-decoration: none"><g:message code="default.attribute.companyStatus"/></a></div>
+    <div class="col-sm-2" style="border:1px solid white; padding: 10px"><a href="/secure/superAdmin?sort=registrationNo&max=4&order=asc" style="color: #f2f2f2; text-decoration: none"><g:message code="default.attribute.registrationNo"/></a></div>
+    <div class="col-sm-2" style="border:1px solid white; padding: 10px"><a href="/secure/superAdmin?sort=totalEmployee&max=4&order=asc" style="color: #f2f2f2; text-decoration: none"><g:message code="default.attribute.totalEmployee"/></a></div>
+    <div class="col-sm-2" style="border:1px solid white; padding: 10px"><a href="/secure/superAdmin?sort=email&max=4&order=asc" style="color: #f2f2f2; text-decoration: none"><g:message code="default.attribute.email"/></a></div>
 
 </div>
 <g:form name="showForm" controller="super" action="modifyCompany">

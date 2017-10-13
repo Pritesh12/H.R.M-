@@ -4,6 +4,8 @@ import entity.AttendanceDetail
 import grails.plugin.springsecurity.annotation.Secured
 import org.quartz.Scheduler
 import org.quartz.impl.StdSchedulerFactory
+import org.springframework.context.MessageSource
+
 import java.text.DateFormat
 import java.text.SimpleDateFormat
 
@@ -11,6 +13,7 @@ import java.text.SimpleDateFormat
 class SecureController {
 
     def springSecurityService
+    def MessageSource messageSource
     def index() {
         Scheduler scheduler = StdSchedulerFactory.getDefaultScheduler()
         scheduler.start()

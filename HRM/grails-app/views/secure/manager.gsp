@@ -6,50 +6,54 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-    <title>${company.companyName} | Home</title>
+    <title>${company.companyName} | <g:message code="menu.nav.home"/></title>
 </head>
 <body>
 
 <div class="col-md-12">
     <div class="col-md-12" style="padding:4px; padding-left: 0px; padding-right: 0px">
         <div class="col-md-10">
-            <h2 style="text-align:left;color:darkorange;font-family: Verdana" >Human Resource Management </h2>
+            <h2 style="text-align:left;color:darkorange;font-family: Verdana" ><g:message code="default.attribute.header.banner"/></h2>
         </div>
         <div class="col-md-2" style="padding:20px;padding-bottom: 0px; height:100%; color: #666666" >
-            Welcome ${username}<button class="btn btn-primary dropdown-toggle" style="border: 0px;color: black; background-color: white; padding-bottom: 3px; padding-top: 3px; padding-left: 6px;padding-right: 6px" type="button" data-toggle="dropdown">
+            <g:message code="default.attribute.welcome"/> ${username}<button class="btn btn-primary dropdown-toggle" style="border: 0px;color: black; background-color: white; padding-bottom: 3px; padding-top: 3px; padding-left: 6px;padding-right: 6px" type="button" data-toggle="dropdown">
             <span class="caret"></span></button>
             <ul class="dropdown-menu">
-                <li><g:link controller="#" action="newCompPage" style="text-decoration: none">Profile</g:link></li>
-                <li><g:link controller="#" action="newCompPage" style="text-decoration: none">Setting</g:link></li>
-                <li><g:link controller="logout" style="text-decoration: none">Log Out</g:link></li>
+                <li><g:link controller="#" action="newCompPage" style="text-decoration: none"><g:message code="default.attribute.profile"/></g:link></li>
+                <li><g:link controller="#" action="newCompPage" style="text-decoration: none"><g:message code="default.attribute.setting"/></g:link></li>
+                <li><g:link controller="logout" style="text-decoration: none"><g:message code="default.attribute.logout"/></g:link></li>
             </ul>
         </div>
     </div>
 
     <div class="col-md-12" style="background-color: #f28c38; color: white "><h1 style="text-align:left;font-size:20px;font-family:Verdana ">${company.companyName}</h1></div>
     <ul class="nav nav-tabs">
-        <li><g:link class="home" controller="secure">Home</g:link></li>
-        <li><g:link class="home" controller="manager" action="employees">Employees</g:link></li>
-        <li><g:link class="home" controller="manager" action="holiday" >Holidays</g:link></li>
-        <li><g:link class="home" controller="manager" action="leaveAction">Leaves<g:if test="${leaveCount > 0}"><span class="badge badge-notify" style="background-color: red; margin-bottom: 10px; padding-left: 5px; padding-right:6px">${leaveCount}</span></g:if></g:link></li>
+        <li><g:link class="home" controller="secure"><g:message code="menu.nav.home"/></g:link></li>
+        <li><g:link class="home" controller="manager" action="employees"><g:message code="menu.nav.employees"/></g:link></li>
+        <li><g:link class="home" controller="manager" action="holiday" ><g:message code="menu.nav.holidays"/></g:link></li>
+        <li><g:link class="home" controller="manager" action="leaveAction"><g:message code="menu.nav.leaves"/>
+            <g:if test="${leaveCount > 0}"><span class="badge badge-notify" style="background-color: red; margin-bottom: 10px; padding-left: 5px; padding-right:6px">${leaveCount}</span>
+            </g:if>
+        </g:link>
+        </li>
         <li class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Asset<span class="caret"></span></a>
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#"><g:message code="menu.nav.asset"/><span class="caret"></span></a>
             <ul class="dropdown-menu">
-                <li><g:link controller="manager" action="assignAsset">Assign Asset</g:link></li>
-                <li><g:link controller="manager" action="assets">Asset List</g:link></li>
+                <li><g:link controller="manager" action="assignAsset"><g:message code="default.dropdown.attribute.assignAsset"/></g:link></li>
+                <li><g:link controller="manager" action="assets"><g:message code="default.dropdown.attribute.assetList"/></g:link></li>
             </ul>
         </li>
     </ul>
     <div class="box, col-md-12" style="border-radius:5px; background-color: #f7f6f6; padding-top: 15px; padding-bottom: 15px">
         <div class="inner" style="font-size:20px;height: auto">
-            <fieldset>Company Info</fieldset>
+            <fieldset><g:message code="box.inner.fieldset.companyInfo"/></fieldset>
             <hr>
         </div>
         <div>
             <div class="col-md-12" style="padding: 0px 0 10px 0" >
                 <div class="col-md-6" style="padding: 5px" >
                     <div class="col-md-4" style="font-family:verdana;font-size:12px" >
-                        <p style="padding-right:10px"><b>Name</b></p>
+                        <p style="padding-right:10px"><b><g:message code="default.attribute.name"/></b></p>
                     </div>
                     <div class="col-md-8">
                         ${company.companyName}
@@ -59,7 +63,7 @@
 
             <div class="col-md-6" style="padding: 5px">
                 <div class="col-md-4" style="font-family:verdana;font-size:12px;" >
-                    <p style="padding-right:10px"><b>Email</b></p>
+                    <p style="padding-right:10px"><b><g:message code="default.attribute.email"/></b></p>
                 </div>
                 <div class="col-md-8">
                     ${company.email}
@@ -68,7 +72,7 @@
             <div class="col-md-12" style="padding: 10px 0 10px 0">
                 <div class="col-md-6"  style="padding: 5px">
                     <div class="col-md-4" style="font-family:verdana;font-size:12px;" >
-                        <p style="padding-right:10px"><b>Phone</b></p>
+                        <p style="padding-right:10px"><b><g:message code="default.attribute.phone"/></b></p>
                     </div>
                     <div class="col-md-8">
                         ${company.phone}
@@ -78,7 +82,7 @@
             <div class="col-md-12" style="padding: 10px 0 10px 0">
                 <div class="col-md-6"  style="padding: 5px">
                     <div class="col-md-4" style="font-family:verdana;font-size:12px;" >
-                        <p style="padding-right:10px"><b>Address</b></p>
+                        <p style="padding-right:10px"><b><g:message code="default.attribute.address"/></b></p>
                     </div>
                     <div class="col-md-8">
                         ${company.address}
@@ -88,7 +92,7 @@
             <div class="col-md-12" style="padding: 10px 0 10px 0">
                 <div class="col-md-6"  style="padding: 5px">
                     <div class="col-md-4" style="font-family:verdana;font-size:12px;" >
-                        <p style="padding-right:10px"><b>City</b></p>
+                        <p style="padding-right:10px"><b><g:message code="default.attribute.city"/></b></p>
                     </div>
                     <div class="col-md-8">
                         ${company.city}
@@ -98,7 +102,7 @@
             <div class="col-md-12" style="padding: 10px 0 10px 0">
                 <div class="col-md-6"  style="padding: 5px">
                     <div class="col-md-4" style="font-family:verdana;font-size:12px;" >
-                        <p style="padding-right:10px"><b>State</b></p>
+                        <p style="padding-right:10px"><b><g:message code="default.attribute.state"/></b></p>
                     </div>
                     <div class="col-md-8">
                         ${company.state}
@@ -108,7 +112,7 @@
             <div class="col-md-12" style="padding: 10px 0 0px 0">
                 <div class="col-md-6"  style="padding: 5px">
                     <div class="col-md-4" style="font-family:verdana;font-size:12px;" >
-                        <p style="padding-right:10px"><b>Country</b></p>
+                        <p style="padding-right:10px"><b><g:message code="default.attribute.country"/></b></p>
                     </div>
                     <div class="col-md-8">
                         ${company.country}
@@ -118,7 +122,7 @@
             <div class="box, col-md-12" style="border-radius:5px; background-color: #f7f6f6; padding-top: 0px; padding-bottom: 0px">
                 <div class="inner" style="font-size:20px;height: auto;padding: 0 0 0 0">
                     <hr>
-                    <fieldset>Employees</fieldset>
+                    <fieldset><g:message code="menu.nav.employees"/></fieldset>
                     <hr>
                 </div>
                 <div class="col-sm-12" style="padding: 0 0 0 0; background-color: #f28c38">

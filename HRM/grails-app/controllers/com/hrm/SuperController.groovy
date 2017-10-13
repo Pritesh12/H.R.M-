@@ -2,7 +2,7 @@ package com.hrm
 
 import grails.plugin.springsecurity.annotation.Secured
 import grails.transaction.Transactional
-import org.apache.commons.collections.ListUtils
+import org.springframework.context.MessageSource
 import org.springframework.transaction.annotation.Propagation
 
 @Secured('permitAll')
@@ -11,6 +11,7 @@ class SuperController {
     def testRole
     def testuser
     def springSecurityService
+    def MessageSource messageSource
 
     //Company*****************************************************************************************************************
     def newCompany() {
@@ -54,7 +55,6 @@ class SuperController {
         employeeLeave.save()
         employee.setEmployeeLeave(employeeLeave)
         employee.save()
-        println("iiii"+employee.errors)
         company.addToEmployees(employee)
         company.save(flush: true)
 

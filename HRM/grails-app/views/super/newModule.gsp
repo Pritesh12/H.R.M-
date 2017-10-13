@@ -43,48 +43,48 @@
             document.getElementById("index").value = index;
         }
     </g:javascript>
-    <title>HRM | Create Module</title>
+    <title><g:message code="menu.nav.hrm"/> | <g:message code="default.dropdown.attribute.createModule"/></title>
 </head>
 <body>
 <div class="col-md-12">
     <div class="col-md-12" style="background-color: white; padding:4px; padding-left: 0px; padding-right: 0px">
         <div class="col-md-10">
-            <h2 style="text-align:left;color:darkorange;font-family: Verdana" >Human Resource Management </h2>
+            <h2 style="text-align:left;color:darkorange;font-family: Verdana" ><g:message code="default.attribute.header.banner"/></h2>
         </div>
         <div class="col-md-2" style="padding:20px;padding-bottom: 0px; height:100%; color: #666666" >
-            Welcome ${username}<button class="btn btn-primary dropdown-toggle" style="border: 0px;color: black; background-color: white; padding-bottom: 3px; padding-top: 3px; padding-left: 6px;padding-right: 6px" type="button" data-toggle="dropdown">
+            <g:message code="default.attribute.welcome"/> ${username}<button class="btn btn-primary dropdown-toggle" style="border: 0px;color: black; background-color: white; padding-bottom: 3px; padding-top: 3px; padding-left: 6px;padding-right: 6px" type="button" data-toggle="dropdown">
             <span class="caret"></span></button>
             <ul class="dropdown-menu">
-                <li><g:link controller="#" action="newCompPage" style="text-decoration: none">Profile</g:link></li>
-                <li><g:link controller="#" action="newCompPage" style="text-decoration: none">Setting</g:link></li>
-                <li><g:link controller="logout" style="text-decoration: none">Log Out</g:link></li>
+                <li><g:link controller="#" action="newCompPage" style="text-decoration: none"><g:message code="default.attribute.profile"/></g:link></li>
+                <li><g:link controller="#" action="newCompPage" style="text-decoration: none"><g:message code="default.attribute.setting"/></g:link></li>
+                <li><g:link controller="logout" style="text-decoration: none"><g:message code="default.attribute.logout"/></g:link></li>
             </ul>
         </div>
     </div>
     <div class="col-md-12" style="background-color: #f28c38; color: white ">
-        <h1 style="text-align:left;font-size:20px;font-family:Verdana ">New Module</h1></div>
+        <h1 style="text-align:left;font-size:20px;font-family:Verdana "><g:message code="box.inner.fieldset.newModule"/></h1></div>
     <div>
         <ul class="nav nav-tabs">
-            <li><g:link class="home" controller="secure" action="superAdmin">Home</g:link></li>
+            <li><g:link class="home" controller="secure" action="superAdmin"><g:message code="menu.nav.home"/></g:link></li>
             <li class="dropdown">
-                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Company<span class="caret"></span></a>
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#"><g:message code="menu.nav.company"/><span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                    <li><g:link controller="super" action="newCompany">Add Company</g:link></li>
-                    <li><g:link class="list" controller="super" action="company">Company List</g:link></li>
+                    <li><g:link controller="super" action="newCompany"><g:message code="default.dropdown.attribute.addCompany"/></g:link></li>
+                    <li><g:link class="list" controller="super" action="company"><g:message code="default.dropdown.attribute.companyList"/></g:link></li>
                 </ul>
             </li>
             <li class="dropdown">
-                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Module<span class="caret"></span></a>
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#"><g:message code="menu.nav.module"/><span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                    <li><g:link controller="super" action="newModule">Add Module</g:link></li>
-                    <li><g:link controller="super" action="module">Module List</g:link></li>
+                    <li><g:link controller="super" action="newModule"><g:message code="default.dropdown.attribute.addModule"/></g:link></li>
+                    <li><g:link controller="super" action="module"><g:message code="default.dropdown.attribute.moduleList"/></g:link></li>
                 </ul>
             </li>
             <li class="dropdown">
-                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Role<span class="caret"></span></a>
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#"><g:message code="menu.nav.role"/><span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                    <li><g:link controller="super" action="newRole">Add Role</g:link></li>
-                    <li><g:link controller="super" action="role">Role List</g:link></li>
+                    <li><g:link controller="super" action="newRole"><g:message code="default.dropdown.attribute.addRole"/></g:link></li>
+                    <li><g:link controller="super" action="role"><g:message code="default.dropdown.attribute.roleList"/></g:link></li>
                 </ul>
             </li>
     </ul><br>
@@ -92,12 +92,12 @@
     <div class="box, col-md-12" style="border-radius:5px; background-color: #f7f6f6; padding-top: 15px; padding-bottom: 15px">
         <div class="inner" style="font-size:20px;height: auto">
             <g:form name="moduleForm" url="[controller:'super', action:'saveModule']">
-                <fieldset>Module Information</fieldset>
+                <fieldset><g:message code="box.inner.fieldset.moduleInformation"/></fieldset>
                 <hr>
                 <div class="col-md-12" style="padding: 10px 0 10px 0" >
                     <div class="col-md-6" style="padding: 5px" >
                         <div class="col-md-4" style="font-family:verdana;font-size:12px" >
-                            <p style="padding-right:10px">Name* </p>
+                            <p style="padding-right:10px"><g:message code="default.attribute.name0"/></p>
                         </div>
                         <div class="col-md-8">
                             <input class="inputStyle" type="text" required name="moduleName" >
@@ -105,7 +105,7 @@
                     </div>
                     <div class="col-md-6" style="padding: 5px">
                         <div class="col-md-4" style="font-family:verdana;font-size:12px;" >
-                            <p style="padding-right:10px">Type* </p>
+                            <p style="padding-right:10px"><g:message code="default.attribute.type"/></p>
                         </div>
                         <div class="col-md-8">
                             <input class="inputStyle" type="text" required name="moduleType" >
@@ -114,14 +114,14 @@
                 </div>
                 <hr style="padding: 5px;margin: 0px">
                 <input type="submit" class="btn btn-success" name="submit" id="create" value="Create">
-                <fieldset style="padding-top: 10px">Menu Details</fieldset>
+                <fieldset style="padding-top: 10px"><g:message code="box.inner.fieldset.menuDetails"/></fieldset>
                 <hr style="margin-bottom: 10px">
                 <div class="col-md-12" style="padding: 0 0 10px 0" >
                     <g:each var="i" in="${(0..<5)}">
                         <div class="col-md-12" id="div${i}">
                             <div class="col-md-4" style="padding: 5px" >
                                 <div class="col-md-4" style="padding-left: 0px; padding-right: 0px;font-family:verdana;font-size:12px" >
-                                    <p style="padding-right:10px">Name* </p>
+                                    <p style="padding-right:10px"><g:message code="default.attribute.name0"/></p>
                                 </div>
                                 <div class="col-md-8" style="padding-left: 0px; padding-right: 0px">
                                     <input class="inputStyle" required disabled id="name${i}" type="text" name="name${i}" >
@@ -129,7 +129,7 @@
                             </div>
                             <div class="col-md-4" style="padding: 5px" >
                                 <div class="col-md-4" style="padding-left: 0px; padding-right: 0px;font-family:verdana;font-size:12px" >
-                                    <p style="padding-right:10px">Order No.* </p>
+                                    <p style="padding-right:10px"><g:message code="default.attribute.orderNo"/></p>
                                 </div>
                                 <div class="col-md-8" style="padding-left: 0px; padding-right: 0px">
                                     <input class="inputStyle" required disabled id="serialNo${i}" type="number" name="serialNo${i}" >
@@ -137,7 +137,7 @@
                             </div>
                             <div class="col-md-4" style="padding: 5px" >
                                 <div class="col-md-4" style="padding-left: 0px; padding-right: 0px;font-family:verdana;font-size:12px" >
-                                    <p style="padding-right:10px">Link </p>
+                                    <p style="padding-right:10px"><g:message code="default.attribute.link"/></p>
                                 </div>
                                 <div class="col-md-8" style="padding-left: 0px; padding-right: 0px">
                                     <input class="inputStyle" required disabled id="link${i}" type="text" name="link${i}" >
@@ -145,8 +145,8 @@
                             </div>
                         </div>
                     </g:each>
-                    <button class="btn btn-success" type="button" style="margin-left:10px; font-size:30px; padding: 0 12px 0 12px; border-radius: 100px" onclick="add()">+</button>
-                    <button class="btn btn-danger" type="button" style="float:right; padding: 3px 8px 3px 8px" id="remove" onclick="remove()">Remove</button>
+                    <button class="btn btn-success" type="button" style="margin-left:10px; font-size:30px; padding: 0 12px 0 12px; border-radius: 100px" onclick="add()"><g:message code="default.attribute.button.plus"/></button>
+                    <button class="btn btn-danger" type="button" style="float:right; padding: 3px 8px 3px 8px" id="remove" onclick="remove()"><g:message code="default.attribute.button.remove"/></button>
                 </div>
                 <hr style="padding: 5px;margin: 0px">
                 <input type="hidden" id="index" name="index">

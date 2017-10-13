@@ -87,7 +87,8 @@
             </li>
         </ul><br>
     </div>
-<div class="box, col-md-12" style="border-radius:5px; background-color: #f7f6f6; padding-top: 15px; padding-bottom: 15px">
+
+    <div class="box, col-md-12" style="border-radius:5px; background-color: #f7f6f6; padding-top: 15px; padding-bottom: 15px">
        <div class="inner" style="font-size:20px;height: auto">
 <g:form controller="super" action="saveSubMenu">
     <fieldset>Add Sub-Menu</fieldset>
@@ -129,6 +130,7 @@
     <div class="col-sm-10">
         <input type="submit" class="btn btn-success" id="save" name="submit" value="Save">
     </div>
+    <div class="col-sm-2" align="right" style="float: right"><h6 style="color: #595959; font-size: 11px">**Maximum 5${index}</h6></div>
 </g:form>
        </div>
        </div>
