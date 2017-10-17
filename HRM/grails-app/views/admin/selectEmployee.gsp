@@ -70,7 +70,20 @@
                 <li><g:link class="list" controller="asset" action="assignAsset"><g:message code="default.dropdown.attribute.assignAsset"/></g:link></li>
             </ul>
         </li>
-        <li><g:link class="home" controller="secure" action="geoZone"><g:message code="menu.nav.geozone"/></g:link></li>
+        <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#"><g:message code="menu.nav.geozone"/><span class="caret"></span></a>
+            <ul class="dropdown-menu">
+                <li><g:link class="home" controller="geozone" action="form"><g:message code="default.dropdown.attribute.createGeozone"/></g:link></li>
+                <li><g:link class="home" controller="secure" action="geoZone"><g:message code="default.dropdown.attribute.geozone"/></g:link></li>
+            </ul>
+        </li>
+        <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#"><g:message code="menu.nav.invoice"/><span class="caret"></span></a>
+            <ul class="dropdown-menu">
+                <li><g:link class="home" controller="invoice" action="invoice" ><g:message code="default.dropdown.attribute.createInvoice"/></g:link></li>
+                <li><g:link class="home" ><g:message code="default.dropdown.attribute.invoices"/></g:link></li>
+            </ul>
+        </li>
     </ul><br>
 </div><div class="col-sm-12" style="padding: 0 0 0 0; background-color: #f28c38">
     <div class="col-sm-2" style="border:1px solid white; padding: 10px"><a href="" style="color: #f2f2f2; text-decoration: none"><g:message code="default.attribute.firstName0"/></a></div>
