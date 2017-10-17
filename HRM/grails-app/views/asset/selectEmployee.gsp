@@ -53,7 +53,20 @@
                     <li><g:link class="list" controller="asset" action="assignAsset">Assign Assets</g:link></li>
                 </ul>
             </li>
-            <li><g:link class="home" controller="secure" action="geoZone">GeoZone</g:link></li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#"><g:message code="menu.nav.geozone"/><span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><g:link class="home" controller="geozone" action="form"><g:message code="default.dropdown.attribute.createGeozone"/></g:link></li>
+                    <li><g:link class="home" controller="secure" action="geoZone"><g:message code="default.dropdown.attribute.geozone"/></g:link></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#"><g:message code="menu.nav.invoice"/><span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><g:link class="home" controller="invoice" action="invoice" ><g:message code="default.dropdown.attribute.createInvoice"/></g:link></li>
+                    <li><g:link class="home" ><g:message code="default.dropdown.attribute.invoices"/></g:link></li>
+                </ul>
+            </li>
         </ul><br>
     </div>
 
