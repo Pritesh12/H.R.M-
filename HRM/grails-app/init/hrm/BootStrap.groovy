@@ -1,5 +1,6 @@
 package hrm
 
+import com.hrm.Module
 import com.hrm.Role
 import com.hrm.User
 import com.hrm.UserRole
@@ -15,6 +16,9 @@ class BootStrap {
         def superAdminRole  = new Role(authority: 'ROLE_SUPERADMIN').save()
         def employeeRole  = new Role(authority: 'ROLE_EMPLOYEE').save()
         def managerRole  = new Role(authority: 'ROLE_MANAGER').save()
+        def moduleGeo = new Module(moduleName : "GeoZone" ,moduleType : "Bussiness").save()
+        def moduleInv = new Module(moduleName : "Invoice" ,moduleType : "Bussiness").save()
+        def moduleMar = new Module(moduleName : "Digital Marketing" ,moduleType : "Social").save()
         def currencyInr = new Currency(name: "Indian Rupee", symbol: "INR", country: "India", code: "INR").save()
         def currencyAll = new Currency(name: "Albania Lek", symbol: "Lek", country: "Albania", code: "ALL").save()
         def currencyAfn = new Currency(name: "Afghanistan Afghani", symbol: "؋", country: "Afghanistan", code: "AFN").save()
