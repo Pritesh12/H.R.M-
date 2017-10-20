@@ -1,24 +1,22 @@
 package hrm
 
-import com.hrm.Module
 import com.hrm.Role
+import com.hrm.RoleEmployee
 import com.hrm.User
 import com.hrm.UserRole
 import com.invoice.Currency
+import entity.EventData
 import grails.converters.JSON
 
 class BootStrap {
 
     def init = { servletContext -> registerMarshallers()
 
-        def adminRole = new Role(authority: 'ROLE_ADMIN').save()
+        def admin= new Role(authority: 'ROLE_ADMIN').save()
         def testUser = new User(username: 'me', password: 'password').save()
-        def superAdminRole  = new Role(authority: 'ROLE_SUPERADMIN').save()
-        def employeeRole  = new Role(authority: 'ROLE_EMPLOYEE').save()
-        def managerRole  = new Role(authority: 'ROLE_MANAGER').save()
-        def moduleGeo = new Module(moduleName : "GeoZone" ,moduleType : "Bussiness").save()
-        def moduleInv = new Module(moduleName : "Invoice" ,moduleType : "Bussiness").save()
-        def moduleMar = new Module(moduleName : "Facebook" ,moduleType : "Social").save()
+        def superAdminRole  = new RoleEmployee(name: 'SUPERADMIN',accessibility:"High").save()
+        def employeeRole  = new RoleEmployee(name: 'EMPLOYEE',accessibility:"Low").save()
+        def managerRole  = new RoleEmployee(name: 'MANAGER',accessibility:"Normal").save()
         def currencyInr = new Currency(name: "Indian Rupee", symbol: "INR", country: "India", code: "INR").save()
         def currencyAll = new Currency(name: "Albania Lek", symbol: "Lek", country: "Albania", code: "ALL").save()
         def currencyAfn = new Currency(name: "Afghanistan Afghani", symbol: "؋", country: "Afghanistan", code: "AFN").save()
@@ -38,7 +36,7 @@ class BootStrap {
         def currencyClp = new Currency(name: "Chile Peso", symbol: "\$", country: "Chile", code: "CLP").save()
         def currencyCrc = new Currency(name: "Costa Rica Colon", symbol: "₡", country: "Costa Rica", code: "\tCRC").save()
 
-        UserRole.create testUser, adminRole
+        UserRole.create testUser, admin
 
         UserRole.withSession {
             it.flush()
@@ -53,6 +51,21 @@ class BootStrap {
                     'id'                        : it.id?:"",
                     'username'                  : it.username?:"",
                     'password'                  : it.password?:"",
+            ]
+            return map
+        }
+
+        JSON.registerObjectMarshaller(EventData) {
+
+            def map = [
+                    'id'                       : it.id?:"",
+                    'companyId'                : it.companyId?:"",
+                    'creationTime'             : it.creationTime?:"",
+                    'deviceId'                 : it.deviceId?:"",
+                    'geozoneId'                : it.geozoneId?:"",
+                    'latitude'                 : it.latitude?:"",
+                    'longitude'                : it.longititude?:"",
+                    'statusCode'               : it.statusCode?:""
             ]
             return map
         }
