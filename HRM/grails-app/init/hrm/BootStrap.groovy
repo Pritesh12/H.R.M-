@@ -21,7 +21,7 @@ class BootStrap {
         def moduleGeo = new Module(moduleName : "GeoZone" ,moduleType : "Bussiness").save()
         def moduleInv = new Module(moduleName : "Invoice" ,moduleType : "Bussiness").save()
         def moduleMar = new Module(moduleName : "Facebook" ,moduleType : "Social").save()
-        def moduleMar = new Module(moduleName : "Adwords" ,moduleType : "Business").save()
+        def moduleMar1 = new Module(moduleName : "Adwords" ,moduleType : "Business").save()
         def menu = new Menu(name : "Home" ,orderBy : "0").save()
         def currencyInr = new Currency(name: "Indian Rupee", symbol: "INR", country: "India", code: "INR").save()
         def currencyAll = new Currency(name: "Albania Lek", symbol: "Lek", country: "Albania", code: "ALL").save()
