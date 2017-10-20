@@ -18,7 +18,6 @@ class BootStrap {
         def superAdminRole  = new Role(authority: 'ROLE_SUPERADMIN').save()
         def employeeRole  = new Role(authority: 'ROLE_EMPLOYEE').save()
         def managerRole  = new Role(authority: 'ROLE_MANAGER').save()
-      //  def employee_role  = new RoleEmployee(name : "MANAGER_LEVEL_1" ,type: "MANAGER",accessibility : "medium",priority : "7").save()
         def moduleGeo = new Module(moduleName : "GeoZone" ,moduleType : "Bussiness").save()
         def moduleInv = new Module(moduleName : "Invoice" ,moduleType : "Bussiness").save()
         def moduleMar = new Module(moduleName : "Facebook" ,moduleType : "Social").save()
