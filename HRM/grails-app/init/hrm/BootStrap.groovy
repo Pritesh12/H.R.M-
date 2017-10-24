@@ -20,7 +20,6 @@ class BootStrap {
         def managerRole  = new Role(authority: 'ROLE_MANAGER').save()
         def moduleGeo = new Module(moduleName : "GeoZone" ,moduleType : "Bussiness").save()
         def moduleInv = new Module(moduleName : "Invoice" ,moduleType : "Bussiness").save()
-        def moduleMar = new Module(moduleName : "Facebook" ,moduleType : "Social").save()
         def menu = new Menu(name : "Home" ,orderBy : "0", module: "13").save()
         def currencyInr = new Currency(name: "Indian Rupee", symbol: "INR", country: "India", code: "INR").save()
         def currencyAll = new Currency(name: "Albania Lek", symbol: "Lek", country: "Albania", code: "ALL").save()
