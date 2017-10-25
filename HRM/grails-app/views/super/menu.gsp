@@ -60,25 +60,33 @@
     </div>
 
         <div class="col-sm-12" style="padding: 0 0 0 0; background-color: #f28c38">
-            <div class="col-sm-1" style="padding: 10px;color: #f2f2f2;"></div>
-            <div class="col-sm-3" style="border:1px solid white; padding: 10px"><a href="" style="color: #f2f2f2; text-decoration: none"><g:message code="default.attribute.menuName"/></a></div>
-            <div class="col-sm-3" style="border:1px solid white; padding: 10px"><a href="" style="color: #f2f2f2; text-decoration: none"><g:message code="default.attribute.orderBy"/></a></div>
-            <div class="col-sm-3" style="border:1px solid white; padding: 10px; text-align: center"><a href="" style="color: #f2f2f2; text-decoration: none"><g:message code="default.attribute.subMenu"/></a></div>
-        </div>
-        <g:each in="${menus}" var="menu" status="i">
-            <div class="col-sm-12" style="background-color: #f2f2f2;padding: 1px 0 1px 0; border:1px solid white">
-                <div class="col-sm-1" style="padding: 0 0 0 0;" align="center">
-                </div>
-                <div class="col-sm-3" style="padding: 0 0 0 0;">${menu.name}</div>
-                <div class="col-sm-3" style="padding: 0 0 0 0;">${menu.orderBy}</div>
-                <div class="col-sm-2" style="padding: 0 0 0 0;">
-            <g:form controller="super" action="addSubMenu">
+            <div class="col-sm-2" style="padding: 10px;color: #f2f2f2;"></div>
+            <div class="col-sm-4" style="border:1px solid white; padding: 10px"><a href="" style="color: #f2f2f2; text-decoration: none"><g:message code="default.attribute.menuName"/></a></div>
+            <div class="col-sm-4" style="border:1px solid white; padding: 10px"><a href="" style="color: #f2f2f2; text-decoration: none"><g:message code="default.attribute.orderBy"/></a></div>
+            <div class="col-sm-2" style="padding: 10px;color: #f2f2f2;"></div>
+            %{--          <div class="col-sm-3" style="border:1px solid white; padding: 10px; text-align: center"><a href="" style="color: #f2f2f2; text-decoration: none"><g:message code="default.attribute.subMenu"/></a></div>
+            --}%      </div>
+    <g:form>
+                <g:each in="${menus}" var="menu" status="i">
+                    <div class="col-sm-12" style="background-color: #f2f2f2;padding: 1px 0 1px 0; border:1px solid white">
+                        <div class="col-sm-2" style="padding: 0 0 0 0;"></div>
+                        <div class="col-sm-3" style="padding: 0 0 0 0; text-align: center">
+                            %{--<a href="${createLink(controller:'super',action: 'addSubMenu', id:'${menu.id}')}">${menu.name}</a>--}%
+                            <g:link controller="super" action="addSubMenu" id="${menu.id}">${menu.name}</g:link>
+                        </div>
+                        <div class="col-sm-2" style="padding: 0 0 0 0;"></div>
+                        <div class="col-sm-3" style="padding: 0 0 0 0;">${menu.orderBy}</div>
+                        <div class="col-sm-2" style="padding: 0 0 0 0;">
+
+    %{--        <g:form controller="super" action="addSubMenu">
                     <input type="hidden" name="id" value="${menu.id}">
                     <input type="submit" class="btn btn-success" name="menu" id="menu" value="Add" style="align: center">
             </g:form>
-                </div>
+    --}%               </div>
             </div>
         </g:each>
+    </g:form>
 </div>
+
 </body>
 </html>

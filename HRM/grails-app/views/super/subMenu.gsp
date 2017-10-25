@@ -85,6 +85,12 @@
                     <li><g:link controller="super" action="role">Role List</g:link></li>
                 </ul>
             </li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#"><g:message code="menu.nav.menu"/><span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><g:link controller="super" action="menu"><g:message code="default.dropdown.attribute.menuList"/></g:link></li>
+                </ul>
+            </li>
         </ul><br>
     </div>
 
@@ -93,8 +99,9 @@
 <g:form controller="super" action="saveSubMenu">
     <fieldset>Add Sub-Menu</fieldset>
     <g:hiddenField name="index" id="index"/>
-    <input type="hidden" id="menu" name="id" value="${menu.id}">
-    <hr>
+    <g:hiddenField name="id" value="${params.id}"/>
+    %{--<input type="hidden" id="menu" name="id" value="${menu.id}">
+    --}%<hr>
     <div class="col-md-12" style="padding: 0 0 10px 0" >
         <g:each var="i" in="${(0..<5)}">
             <div class="col-md-12" id="div${i}">
@@ -108,7 +115,7 @@
                 </div>
                 <div class="col-md-4" style="padding: 5px" >
                     <div class="col-md-4" style="padding-left: 0px; padding-right: 0px;font-family:verdana;font-size:12px" >
-                        <p style="padding-right:10px">Order No.* </p>
+                        <p style="padding-right:10px">Order By* </p>
                     </div>
                     <div class="col-md-8" style="padding-left: 0px; padding-right: 0px">
                         <input class="inputStyle" required disabled id="serialNo${i}" type="number" name="serialNo${i}" >
