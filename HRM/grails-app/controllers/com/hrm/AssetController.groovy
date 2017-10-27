@@ -11,7 +11,8 @@ class AssetController {
     def newAsset() {
         def name = springSecurityService.currentUser.getUsername()
         def companyName = Employee.findByUsername(name).company.companyName
-        render(view: 'newAsset', model: [username: name, companyName: companyName])
+        def company = Employee.findByUsername(name).company
+        render(view: 'newAsset', model: [username: name, companyName: companyName, company: company])
     }
 
     @Transactional(propagation = Propagation.REQUIRES_NEW)

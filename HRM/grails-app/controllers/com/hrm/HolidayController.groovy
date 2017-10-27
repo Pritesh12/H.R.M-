@@ -12,7 +12,8 @@ class HolidayController {
     def newHoliday() {
         def name = springSecurityService.currentUser.getUsername()
         def companyName= Employee.findByUsername(name).company.companyName
-        render(view: 'newHoliday', model: [username: name, companyName: companyName, limit:60])
+        def company = Employee.findByUsername(name).company
+        render(view: 'newHoliday', model: [username: name, companyName: companyName, limit:30, company: company])
     }
     @Transactional(propagation = Propagation.REQUIRES_NEW)
     def saveHoliday(){

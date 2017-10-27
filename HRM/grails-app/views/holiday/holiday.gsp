@@ -55,7 +55,24 @@
     </div>
     <div>
         <ul class="nav nav-tabs">
-            <li><g:link class="home" controller="secure"><g:message code="menu.nav.home"/></g:link></li>
+            <g:each in="${company.modules}" var="module">
+                <g:each in="${module.menus.sort{it.orderBy}}" var="menu">
+                    <g:if test="${menu.subMenus.sort{it.orderBy}}">
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">${menu.name} <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <g:each in="${menu.subMenus.sort{it.orderBy}}" var="subMenu">
+                                    <li><g:link  params="[companyId:company.id]" url="${subMenu.link} ">${subMenu.name}</g:link></li>
+                                </g:each>
+                            </ul>
+                        </li>
+                    </g:if>
+                    <g:else>
+                        <li><g:link class="home" url="${menu.link}">${menu.name}</g:link></li>
+                    </g:else>
+                </g:each>
+            </g:each>
+      %{--      <li><g:link class="home" controller="secure"><g:message code="menu.nav.home"/></g:link></li>
             <li class="dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#"><g:message code="menu.nav.employee"/><span class="caret"></span></a>
                 <ul class="dropdown-menu">
@@ -78,8 +95,28 @@
                     <li><g:link class="list" controller="asset" action="assignAsset"><g:message code="default.dropdown.attribute.assignAsset"/></g:link></li>
                 </ul>
             </li>
-            <li><g:link class="home" controller="secure" action="geoZone"><g:message code="menu.nav.geozone"/></g:link></li>
-        </ul><br>
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#"><g:message code="menu.nav.role"/><span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><g:link controller="admin" action="newRole"><g:message code="default.dropdown.attribute.addRole"/></g:link></li>
+                    <li><g:link class="list" controller="admin" action="roles"><g:message code="default.dropdown.attribute.roles"/></g:link></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#"><g:message code="menu.nav.geozone"/><span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><g:link class="home" controller="geozone" action="form"><g:message code="default.dropdown.attribute.createGeozone"/></g:link></li>
+                    <li><g:link class="home" controller="secure" action="geoZone"><g:message code="default.dropdown.attribute.geozone"/></g:link></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#"><g:message code="menu.nav.invoice"/><span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><g:link class="home" controller="invoice" action="invoice" ><g:message code="default.dropdown.attribute.createInvoice"/></g:link></li>
+                    <li><g:link class="home" ><g:message code="default.dropdown.attribute.invoices"/></g:link></li>
+                </ul>
+            </li>
+      --}%  </ul><br>
     </div>
     <div class="col-sm-12" style="padding: 0 0 0 0; background-color: #f2f2f2">
         <ul class="nav nav-tabs">
@@ -90,7 +127,7 @@
         </ul>
     </div>
     <div class="col-sm-12" style="padding: 0 0 0 0; background-color: #f28c38">
-        <div class="col-sm-4" style="border:1px solid white; padding: 10px"><a href="/secure/superAdmin?sort=companyName&max=4&order=asc" style="color: #f2f2f2; text-decoration: none"><g:message code="menu.nav.date"/></a></div>
+        <div class="col-sm-4" style="border:1px solid white; padding: 10px"><a href="/secure/superAdmin?sort=companyName&max=4&order=asc" style="color: #f2f2f2; text-decoration: none">Date</a></div>
         <div class="col-sm-4" style="border:1px solid white; padding: 10px"><a href="/secure/superAdmin?sort=companyName&max=4&order=asc" style="color: #f2f2f2; text-decoration: none">Title</a></div>
     </div>
 

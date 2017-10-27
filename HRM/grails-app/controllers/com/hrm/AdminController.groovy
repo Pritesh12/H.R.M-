@@ -17,10 +17,12 @@ class AdminController {
 
     def newEmployee(){
         def name = springSecurityService.currentUser.getUsername()
+        def employee = Employee.findByUsername(name)
+        def menuList = Menu.list()
         def companyName = Employee.findByUsername(name).company.companyName
         def usernames = User.list().username
         def roleList = RoleEmployee.list()
-        render (view: 'newEmployee', model:[username:name, users: usernames, companyName: companyName, roles: roleList])
+        render (view: 'newEmployee', model:[username:name, users: usernames, companyName: companyName, roles: roleList,menu : menuList, company: employee.company])
     }
 
     @Transactional(propagation = Propagation.REQUIRES_NEW)
@@ -28,7 +30,6 @@ class AdminController {
         def createDate = new Date()
         def name = springSecurityService.currentUser.getUsername()
         def company = Employee.findByUsername(name).company
-
         employee.setCreatedBy(name)
         employee.setCreatedDate(createDate)
 
@@ -124,13 +125,17 @@ class AdminController {
     }
 
     def roles(){
-
+        def name = springSecurityService.currentUser.getUsername()
+        def company = Employee.findByUsername(name).company
+        def roleList = RoleEmployee.list()
+        render(view: 'roles', model: [username: name, company: company,roles: roleList])
     }
 
     def newRole(){
         def name = springSecurityService.currentUser.getUsername()
         def companyName = Employee.findByUsername(name).company.companyName
-        render(view: 'newRole', model: [username: name, companyName: companyName])
+        def company = Employee.findByUsername(name).company
+        render(view: 'newRole', model: [username: name, companyName: companyName, company: company])
     }
 
     @Transactional(propagation = Propagation.REQUIRES_NEW)

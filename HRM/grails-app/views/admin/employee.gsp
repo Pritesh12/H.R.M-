@@ -31,6 +31,24 @@
 <div class="col-md-12" style="background-color: #f28c38; color: white "><h1 style="text-align:left;font-size:20px;font-family:Verdana ">${company.companyName} | <g:message code="menu.nav.employees"/></h1></div>
 <div>
     <ul class="nav nav-tabs">
+        <g:each in="${company.modules}" var="module">
+            <g:each in="${module.menus.sort{it.orderBy}}" var="menu">
+                <g:if test="${menu.subMenus.sort{it.orderBy}}">
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">${menu.name} <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <g:each in="${menu.subMenus.sort{it.orderBy}}" var="subMenu">
+                                <li><g:link  params="[companyId:company.id]" url="${subMenu.link} ">${subMenu.name}</g:link></li>
+                            </g:each>
+                        </ul>
+                    </li>
+                </g:if>
+                <g:else>
+                    <li><g:link class="home" url="${menu.link}">${menu.name}</g:link></li>
+                </g:else>
+            </g:each>
+        </g:each>
+%{--
         <li><g:link class="home" controller="secure"><g:message code="menu.nav.home"/></g:link></li>
         <li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#"><g:message code="menu.nav.employee"/><span class="caret"></span></a>
@@ -56,6 +74,13 @@
             </ul>
           </li>
         <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#"><g:message code="menu.nav.role"/><span class="caret"></span></a>
+            <ul class="dropdown-menu">
+                <li><g:link controller="admin" action="newRole"><g:message code="default.dropdown.attribute.addRole"/></g:link></li>
+                <li><g:link class="list" controller="admin" action="roles"><g:message code="default.dropdown.attribute.roles"/></g:link></li>
+            </ul>
+        </li>
+        <li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#"><g:message code="menu.nav.geozone"/><span class="caret"></span></a>
             <ul class="dropdown-menu">
                 <li><g:link class="home" controller="geozone" action="form"><g:message code="default.dropdown.attribute.createGeozone"/></g:link></li>
@@ -69,6 +94,7 @@
                 <li><g:link class="home" ><g:message code="default.dropdown.attribute.invoices"/></g:link></li>
             </ul>
         </li>
+--}%
     </ul><br>
 </div>
 <div class="col-sm-12" style="padding: 0 0 0 0; background-color: #f28c38">
