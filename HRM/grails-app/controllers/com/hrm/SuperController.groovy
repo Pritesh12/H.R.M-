@@ -16,6 +16,7 @@ class SuperController {
     //Company*****************************************************************************************************************
     def newCompany() {
         def name = springSecurityService.currentUser.getUsername()
+        def mod = Module.list()
         def moduleNames = Module.list().moduleName
         def usernames = User.list().username
         def companyNames = Company.list().companyName
@@ -118,7 +119,42 @@ class SuperController {
         def menus = Menu.list()
         render(view: 'menu', model: [username: name, menus : menus])
     }
+    def addMenu(){
+        def name = springSecurityService.currentUser.getUsername()
+        def moduleObject = Module.findById(Integer.parseInt(params.id))
+        println "!@!@!@!@!@!@!@" +moduleObject.moduleName+"%%%%%%%"+Integer.parseInt(params.id)
+        render(view: 'addMenu', model: [username: name, module : moduleObject])
+    }
+    def saveEditModule(Module module){
+        def name = springSecurityService.currentUser.getUsername()
+        def moduleObject = Module.findById(Integer.parseInt(params.id))
+        def limit = params.int('index')
+        for (int i = 0; i < limit; i++) {
+            Menu menu = new Menu()
+            menu.setName(params["name${i}"])
+            menu.setOrderBy(Integer.parseInt(params["serialNo${i}"]))
+            menu.setLink(params["link${i}"])
+            menu.module = moduleObject
+            module.addToMenus(menu)
+            menu.save()
+        }
+        redirect(controller: 'super', action: 'module')
+//        render(view: 'module', model: [username: name, module: moduleObject])
+    }
 
+    // Delete selected menu
+    def removeMenu() {
+        def name = springSecurityService.currentUser.getUsername()
+        def menuObject = Menu.findById(Integer.parseInt(params.id))
+        def module = menuObject.module.moduleName
+        def menus = Menu.list()
+        def menuDelete = Menu.get(params.id)
+        menuDelete.delete(flush: true)
+
+        redirect(controller: 'super', action: 'editModule')
+
+//        render(view: 'menu', model: [username : name, module : module, menu: menus])
+    }
     def addSubMenu(Menu menu){
         def name = springSecurityService.currentUser.getUsername()
         render(view: 'subMenu', model: [username: name, menu: menu])
@@ -135,6 +171,7 @@ class SuperController {
             submenu.setOrderBy(Integer.parseInt(params["serialNo${i}"]))
             menu.addToSubMenus(submenu)
             menu.validate()
+            menu.save()
         }
         render(view: 'menu', model: [username: name, menu: menu])
     }
@@ -156,8 +193,10 @@ class SuperController {
             menu.setName(params["name${i}"])
             menu.setOrderBy(Integer.parseInt(params["serialNo${i}"]))
             menu.setLink(params["link${i}"])
+         //   menu.setModule(module)
             menu.module = module
             menu.save()
+            module.addToMenus(menu)
         }
         redirect(controller: 'super', action: 'module')
     }
@@ -174,8 +213,12 @@ class SuperController {
 
         //Module Edit-----------------------------------------------------------------------
         if(params.modify.equals("Edit")){
-            def menuObject = moduleObject.menus.name
-            render (view: 'editModule', model:[username: name, module: moduleObject, menu: menuObject])
+            def menuObject = Menu.list()
+            def menu = ""
+            for(def menuList : menuObject){
+                 menu = menuList
+            }
+            render (view: 'editModule', model:[username: name, module: moduleObject, menu: menu])
         }//Module Delete--------------------------------------------------------------------
         else if(params.modify.equals("Delete")){
             def companyList = Company.list()
@@ -190,17 +233,9 @@ class SuperController {
         }
     }
 
-    def updateModule(Module module,Menu menu){
-        println("KKKK"+params.menuName)
-        println("RRRRR"+menu.id)
-        println("##########"+module.menus.id)
-        println("%%%%%%%"+module.id)
-        def menuName = module.menus.name.get(0)
-        println("^^^^^"+menuName)
+    def updateModule(Module module, Menu menu){
         module.setModifiedBy(springSecurityService.currentUser.getUsername())
         module.setModifiedDate(new Date())
-        menu.setName(params.menuName)
-        menu.save(flush:true)
         module.save(flush:true)
         redirect(controller: 'super', action: 'module')
     }

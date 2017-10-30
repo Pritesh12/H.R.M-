@@ -51,17 +51,23 @@
                     <li><g:link controller="super" action="role">Role List</g:link></li>
                 </ul>
             </li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#"><g:message code="menu.nav.menu"/><span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><g:link controller="super" action="menu"><g:message code="default.dropdown.attribute.menuList"/></g:link></li>
+                </ul>
+            </li>
         </ul><br>
     </div>
     <div class="box, col-md-12" style="border-radius:5px; background-color: #f7f6f6; padding-top: 15px; padding-bottom: 15px">
         <div class="inner" style="font-size:20px;height: auto">
             <g:form name="updateForm" url="[controller:'super', action:'updateModule']">
-                <fieldset>Module Information</fieldset>
+                    <fieldset>Module Information</fieldset>
                 <hr>
                 <div class="col-md-12" style="padding: 10px 0 10px 0" >
                     <div class="col-md-6" style="padding: 5px" >
                         <div class="col-md-4" style="font-family:verdana;font-size:12px" >
-                            <p style="padding-right:10px">Name* </p>
+                            <p style="padding-right:10px">Name*</p>
                         </div>
                         <div class="col-md-8">
                             <input class="inputStyle" type="text" required name="moduleName" value="${module.moduleName}">
@@ -69,24 +75,42 @@
                     </div>
                     <div class="col-md-6" style="padding: 5px">
                         <div class="col-md-4" style="font-family:verdana;font-size:12px;" >
-                            <p style="padding-right:10px">Type* </p>
+                            <p style="padding-right:10px">Type*</p>
                         </div>
                         <div class="col-md-8">
                             <input class="inputStyle" type="text" required name="moduleType" value="${module.moduleType}">
                         </div>
                         </div>
-                        <div class="col-md-6" style="padding: 5px">
-                        <div class="col-md-4" style="font-family:verdana;font-size:12px;" >
-                            <p style="padding-right:10px">Menu*</p>
+                        <div class="col-md-12" style="padding: 5px">
+                        <div class="col-md-1" style="font-family:verdana;font-size:12px;" >
+                            <p style="padding-right:10px;">Menus</p>
                         </div>
-                        <div class="col-md-8">
-                            <input class="inputStyle" type="text" required name="menuName" value="${menu.get(0)}">
-                        </div>
+                         <div class="col-md-9" style="padding: 5px;">
+                            <li class="dropdown">
+                                <div class="col-md-12" style="background-color: white; padding: 10px;width: 100%">
+                                    <g:if test="${module.menus.size()>0}">
+                                        <g:each in="${module.menus.sort{it.orderBy}}" var="menu" status="i">
+                                            <div class="col-md-4" style="">
+                                                <button type="button" class="btn btn-warning,dropdown-toggle">${menu.name}&nbsp;&nbsp;<span><g:link controller="super" action="removeMenu" id="${menu.id}">x</g:link></span></button>
+                                            </div>
+                                        </g:each>
+                                        </g:if>
+                                    <g:else>
+                                        <h6>Not Available.</h6>
+                                    </g:else>
+                                </div>
+                            </li>
+                         </div>
+                            <div class="col-md-2" style="padding: 20px">
+                                <g:link controller="super" action="addMenu" id="${module.id}"><button type="button" class="btn btn-success"><b>Add Menu</b></button></g:link>
+                            </div>
                         </div>
                 </div>
                 <hr style="padding: 5px;margin: 0px">
+%{--
                 <input type="hidden" name="id" value="${module.id}">
-                <input type="submit" class="btn btn-success" name="submit" value="Update">
+                <input type="submit" class="btn btn-success" name="modify" value="Update">
+--}%
             </g:form>
         </div>
     </div>
