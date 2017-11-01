@@ -52,31 +52,25 @@
 <div class="col-md-12" style="background-color: #f28c38; color: white "><h1 style="text-align:left;padding:  0 0 10px 0;font-size:20px;font-family:Verdana ">${employee.company.companyName} | Manager</h1></div>
 <div>
     <ul class="nav nav-tabs">
-        <li><g:link class="home" controller="secure">Home</g:link></li>
-        <li class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Employee <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-                <li><g:link controller="admin" action="newEmployee">Add Employee</g:link></li>
-                <li><g:link class="list" controller="admin" action="employee">Employee List</g:link></li>
-                <li><g:link class="list" controller="admin" action="roleAssign">Role Assign</g:link></li>
-            </ul>
-        </li>
-        <li class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Holiday <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-                <li><g:link controller="holiday" action="newHoliday">Add Holiday</g:link></li>
-                <li><g:link class="list" controller="holiday" action="holiday">Holiday List</g:link></li>
-            </ul>
-        </li>
-        <li class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Asset <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-                <li><g:link controller="asset" action="newAsset">Add Asset</g:link></li>
-                <li><g:link class="list" controller="asset" action="assets">Assets</g:link></li>
-                <li><g:link class="list" controller="asset" action="assignAsset">Assign Assets</g:link></li>
-            </ul>
-        </li>
-        <li><g:link class="home" controller="secure" action="geoZone">GeoZone</g:link></li>
+        <g:each in="${company.modules}" var="module">
+            <g:if test="${module.moduleName.equals('GeoZone')}">
+                <g:each in="${module.menus.sort{it.orderBy}}" var="menu">
+                    <g:if test="${menu.subMenus.sort{it.orderBy}}">
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">${menu.name} <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <g:each in="${menu.subMenus.sort{it.orderBy}}" var="subMenu">
+                                    <li><g:link  params="[companyId:company.id]" url="${subMenu.link} ">${subMenu.name}</g:link></li>
+                                </g:each>
+                            </ul>
+                        </li>
+                    </g:if>
+                    <g:else>
+                        <li><g:link class="home" url="${menu.link}">${menu.name}</g:link></li>
+                    </g:else>
+                </g:each>
+            </g:if>
+        </g:each>
     </ul><br>
 </div>
 <div class="box, col-md-12" style="border-radius:5px; background-color: #f7f6f6; padding-top: 5px; padding-bottom: 0px">

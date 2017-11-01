@@ -59,13 +59,13 @@
             <div class="col-sm-3" style="padding: 0 0 0 5px">${leave.reason}</div>
             <div class="col-sm-2" style="padding: 0 0 0 5px">
                 <g:if test="${leave.status.equals("Pending")}">
-                    <p style="background-color:#f28c38;margin-bottom: 0px">${leave.status}</p>
+                    <p style="color:#f28c38;margin-bottom: 0px">${leave.status}</p>
                 </g:if>
                 <g:if test="${leave.status.equals("Approved")}">
-                    <p style="background-color:#70db70;margin-bottom: 0px">${leave.status}</p>
+                    <p style="color:#51FE36;margin-bottom: 0px">${leave.status}</p>
                 </g:if>
                 <g:if test="${leave.status.equals("Denied")}">
-                    <p style="background-color:#ff6666;margin-bottom: 0px">${leave.status}</p>
+                    <p style="color:#FF0000;margin-bottom: 0px">${leave.status}</p>
                 </g:if>
             </div>
             <div class="col-sm-1"></div>

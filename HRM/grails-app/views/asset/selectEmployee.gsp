@@ -7,7 +7,6 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="Stylesheet.css">
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-
     <title>HRM | ${company.companyName} | Select Employee</title>
 </head>
 <body>
@@ -30,6 +29,7 @@
     <div>
         <ul class="nav nav-tabs">
             <g:each in="${company.modules}" var="module">
+            <g:if test="${module.moduleName.equals('GeoZone')}">
                 <g:each in="${module.menus.sort{it.orderBy}}" var="menu">
                     <g:if test="${menu.subMenus.sort{it.orderBy}}">
                         <li class="dropdown">
@@ -45,57 +45,10 @@
                         <li><g:link class="home" url="${menu.link}">${menu.name}</g:link></li>
                     </g:else>
                 </g:each>
-            </g:each>
-        %{--
-                    <li><g:link class="home" controller="secure">Home</g:link></li>
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Employee <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><g:link controller="admin" action="newEmployee">Add Employee</g:link></li>
-                            <li><g:link class="list" controller="admin" action="employee">Employee List</g:link></li>
-                            <li><g:link class="list" controller="admin" action="roleAssign">Role Assign</g:link></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Holiday <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><g:link controller="holiday" action="newHoliday">Add Holiday</g:link></li>
-                            <li><g:link class="list" controller="holiday" action="holiday">Holiday List</g:link></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Asset <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><g:link controller="asset" action="newAsset">Add Asset</g:link></li>
-                            <li><g:link class="list" controller="asset" action="assets">Assets</g:link></li>
-                            <li><g:link class="list" controller="asset" action="assignAsset">Assign Assets</g:link></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><g:message code="menu.nav.role"/><span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><g:link controller="admin" action="newRole"><g:message code="default.dropdown.attribute.addRole"/></g:link></li>
-                            <li><g:link class="list" controller="admin" action="roles"><g:message code="default.dropdown.attribute.roles"/></g:link></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><g:message code="menu.nav.geozone"/><span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><g:link class="home" controller="geozone" action="form"><g:message code="default.dropdown.attribute.createGeozone"/></g:link></li>
-                            <li><g:link class="home" controller="secure" action="geoZone"><g:message code="default.dropdown.attribute.geozone"/></g:link></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><g:message code="menu.nav.invoice"/><span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><g:link class="home" controller="invoice" action="invoice" ><g:message code="default.dropdown.attribute.createInvoice"/></g:link></li>
-                            <li><g:link class="home" ><g:message code="default.dropdown.attribute.invoices"/></g:link></li>
-                        </ul>
-                    </li>
-        --}%
+            </g:if>
+        </g:each>
         </ul><br>
     </div>
-
 <div class="col-sm-12" style="padding: 0 0 0 0; background-color: #f28c38">
     <div class="col-sm-2" style="border:1px solid white; padding: 10px"><a href="/secure/superAdmin?sort=companyName&max=4&order=asc" style="color: #f2f2f2; text-decoration: none">First Name</a></div>
     <div class="col-sm-2" style="border:1px solid white; padding: 10px"><a href="/secure/superAdmin?sort=companyStatus&max=4&order=asc" style="color: #f2f2f2; text-decoration: none">Last Name</a></div>
@@ -103,7 +56,6 @@
     <div class="col-sm-2" style="border:1px solid white; padding: 10px"><a href="/secure/superAdmin?sort=taxId&max=4&order=asc" style="color: #f2f2f2; text-decoration: none">Email</a></div>
     <div class="col-sm-2" style="border:1px solid white; padding: 10px"><a href="/secure/superAdmin?sort=totalEmployee&max=4&order=asc" style="color: #f2f2f2; text-decoration: none">Location</a></div>
     <div class="col-sm-2" style="border:1px solid white; padding: 10px"><a href="/secure/superAdmin?sort=email&max=4&order=asc" style="color: #f2f2f2; text-decoration: none">Role</a></div>
-
 </div>
 <g:form name="showForm" controller="asset" action="assetToEmployee">
     <g:if test="${company.employees.size()>0}">

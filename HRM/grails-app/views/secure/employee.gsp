@@ -28,17 +28,26 @@
 
     <div class="col-md-12" style="background-color: #f28c38; color: white "><h1 style="text-align:left;font-size:20px;font-family:Verdana ">${company.companyName}</h1></div>
     <ul class="nav nav-tabs">
-        <li><g:link class="home" controller="secure"><g:message code="menu.nav.home"/></g:link></li>
-        <li><g:link class="home" controller="holiday" action="holiday"><g:message code="menu.nav.holiday"/></g:link></li>
-        <li class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#"><g:message code="menu.nav.leave"/><span class="caret"></span></a>
-            <ul class="dropdown-menu">
-                <li><g:link controller="employee" action="leave"><g:message code="default.dropdown.attribute.requestLeave"/></g:link></li>
-                <li><g:link controller="employee" action="leaveRecord"><g:message code="default.dropdown.attribute.leaveHistory"/></g:link></li>
-            </ul>
-        </li>
+    <g:each in="${company.modules}" var="module">
+        <g:if test="${module.moduleName.equals('employeeModule')}">
+            <g:each in="${module.menus.sort{it.orderBy}}" var="menu">
+            <g:if test="${menu.subMenus.sort{it.orderBy}}">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">${menu.name} <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <g:each in="${menu.subMenus.sort{it.orderBy}}" var="subMenu">
+                            <li><g:link  params="[companyId:company.id]" url="${subMenu.link} ">${subMenu.name}</g:link></li>
+                        </g:each>
+                    </ul>
+                </li>
+            </g:if>
+            <g:else>
+                <li><g:link class="home" url="${menu.link}">${menu.name}</g:link></li>
+            </g:else>
+        </g:each>
+        </g:if>
+</g:each>
     </ul>
-
     <div class="box, col-md-12" style="border-radius:5px; background-color: #f7f6f6; padding-top: 15px; padding-bottom: 15px">
     <div class="inner" style="font-size:20px;height: auto">
         <g:form>

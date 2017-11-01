@@ -54,80 +54,23 @@
                     <li><g:link class="list" controller="asset" action="assignAsset">Assign Assets</g:link></li>
                 </ul>
             </li>
-            <li><g:link class="home" controller="secure" action="geoZone">GeoZone</g:link></li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#"><g:message code="menu.nav.geozone"/><span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><g:link class="home" controller="geozone" action="form"><g:message code="default.dropdown.attribute.createGeozone"/></g:link></li>
+                    <li><g:link class="home" controller="secure" action="geoZone"><g:message code="default.dropdown.attribute.geozone"/></g:link></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#"><g:message code="menu.nav.invoice"/><span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><g:link class="home" controller="invoice" action="invoice" ><g:message code="default.dropdown.attribute.createInvoice"/></g:link></li>
+                    <li><g:link class="home" ><g:message code="default.dropdown.attribute.invoices"/></g:link></li>
+                </ul>
+            </li>
         </ul><br>
     </div>
-    %{--<div class="col-md-12" style="background-color: #f7f6f6; border-radius: 5px">
-        <div class="col-md-12" style="padding:0 0 15px 0" align="center">
-            <div class="col-md-12" style="padding:0 0 0 0" align="left">
-                <div class="col-md-4" style="padding-top: 10px">
-                    <div class="col-md-5"><h4 style="color: #666666; margin-bottom: 0px" >First Name</h4></div>
-                    <div class="col-md-7" style="padding-top: 10px">${employee.firstName}</div>
-                </div>
-                <div class="col-md-4" style="padding-top: 10px">
-                    <div class="col-md-5"><h4 style="color: #666666; margin-bottom: 0px">Last Name</h4></div>
-                    <div class="col-md-7" style="padding-top: 10px" >${employee.lastName}</div>
-                </div>
-                <div class="col-md-4" style="padding-top: 10px">
-                    <div class="col-md-5"><h4 style="color: #666666; margin-bottom: 0px">Role</h4></div>
-                    <div class="col-md-7" style="padding-top: 10px">${employee.roleEmployee.name}</div>
-                </div>
-            </div>
-            <div class="col-md-12" style="padding:0 0 0 0" align="left">
-                <div class="col-md-4" style="padding-top: 10px">
-                    <div class="col-md-5"><h4 style="color: #666666; margin-bottom: 0px">Age</h4></div>
-                    <div class="col-md-7" style="padding-top: 10px">${employee.age}</div>
-                </div>
-                <div class="col-md-4" style="padding-top: 10px">
-                    <div class="col-md-5"><h4 style="color: #666666; margin-bottom: 0px">Email</h4></div>
-                    <div class="col-md-7" style="padding-top: 10px">${employee.email}</div>
-                </div>
-                <div class="col-md-4" style="padding-top: 10px">
-                    <div class="col-md-5"><h4 style="color: #666666; margin-bottom: 0px">Phone</h4></div>
-                    <div class="col-md-7" style="padding-top: 10px">${employee.phone}</div>
-                </div>
-            </div>
-            <div class="col-md-12" style="padding:0 0 0 0"align="left">
-                <div class="col-md-4" style="padding-top: 10px">
-                    <div class="col-md-5"><h4 style="color: #666666; margin-bottom: 0px">Leave</h4></div>
-                    <div class="col-md-7" style="padding-top: 10px">${employee.employeeLeave.earnLeave}</div>
-                </div>
-                <div class="col-md-4" style="padding-top: 10px">
-                    <div class="col-md-5"><h4 style="color: #666666; margin-bottom: 0px">Used Leave</h4></div>
-                    <div class="col-md-7" style="padding-top: 10px">${employee.employeeLeave.usedLeave}</div>
-                </div>
-                <div class="col-md-4" style="padding-top: 10px">
-                    <div class="col-md-5" ><h4 style="color: #666666; margin-bottom: 0px">Address</h4></div>
-                    <div class="col-md-7" style="padding-top: 10px">${employee.location}</div>
-                </div>
-            </div>
-            <div class="col-md-12" style="padding:0 0 0 0"align="left">
-                <div class="col-md-4" style="padding-top: 10px">
-                    <div class="col-md-5"><h4 style="color: #666666; margin-bottom: 0px">Created By</h4></div>
-                    <div class="col-md-7" style="padding-top: 10px">${employee.createdBy}</div>
-                </div>
-                <div class="col-md-4" style="padding-top: 10px">
-                    <div class="col-md-5"><h4 style="color: #666666; margin-bottom: 0px">Create Date</h4></div>
-                    <div class="col-md-7" style="padding-top: 10px">${employee.createdDate}</div>
-                </div>
-                <g:if test="${!(employee.modifiedBy.equals(null))}">
-                    <div class="col-md-4" style="padding-top: 10px">
-                        <div class="col-md-5"><h4 style="color: #666666; margin-bottom: 0px">Modified By</h4></div>
-                        <div class="col-md-7" style="padding-top: 10px">${employee.modifiedBy}</div>
-                    </div>
-                </g:if>
-            </div>
-            <div class="col-md-12" style="padding:0 0 0 0"align="left">
-                <g:if test="${!(employee.modifiedDate.equals(null))}">
-                    <div class="col-md-4" style="padding-top: 10px">
-                        <div class="col-md-5"><h4 style="color: #666666; margin-bottom: 0px">Modify Date</h4></div>
-                        <div class="col-md-7" style="padding-top: 10px">${employee.modifiedDate}</div>
-                    </div>
-                </g:if>
-            </div>
-        </div>
-    </div>--}%
-    <div class="col-md-12" style="background-color: #f7f6f6; border-radius: 5px; padding-bottom: 15px">
+   <div class="col-md-12" style="background-color: #f7f6f6; border-radius: 5px; padding-bottom: 15px">
         <div class="col-md-4" style="padding-top: 10px">
             <div class="col-md-5"><h4 style="color: #666666; margin-bottom: 0px" >First Name</h4></div>
             <div class="col-md-7" style="padding-top: 10px">${employee.firstName}</div>

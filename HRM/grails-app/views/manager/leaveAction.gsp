@@ -103,10 +103,10 @@
                     <div class="col-sm-2" style="padding: 0 0 0 10px;">${employee.employeeLeave.earnLeave}</div>
                     <div class="col-sm-2" style="padding: 0 0 0 10px;">
                         <g:if test="${leave.status.equals("Approved")}">
-                            <p style="background-color:#70db70;margin-bottom: 0px">${leave.status}</p>
+                            <p style="color:#51FE36;margin-bottom: 0px">${leave.status}</p>
                         </g:if>
                         <g:if test="${leave.status.equals("Denied")}">
-                            <p style="background-color:#ff6666;margin-bottom: 0px">${leave.status}</p>
+                            <p style="color:#FF0000;margin-bottom: 0px">${leave.status}</p>
                         </g:if>
                     </div>
                 </div>
